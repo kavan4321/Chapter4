@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter4.View.Page3Views.Welcome"
+             Title="Welcome"
+            BackgroundColor="LightBlue">
+   
+    <ScrollView>
+        <StackLayout            
+            VerticalOptions="Center">
+            <Frame
+                Margin="10">
+                <StackLayout>
+                    <Image
+                    HeightRequest="150"
+                    Source="quiz"></Image>
+                    <Button
+                        x:Name="PlayButton"
+                        Clicked="PlayButton_Clicked"
+                        Margin="0,30,0,0"
+                        HeightRequest="50"
+                        CornerRadius="20"
+                        BorderColor="LightBlue"
+                        BorderWidth="2"
+                        FontFamily="Homemade Sausage"
+                        FontSize="20"
+                        TextColor="Blue"
+                        BackgroundColor="White"
+                        Text="Play">
+                    </Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
