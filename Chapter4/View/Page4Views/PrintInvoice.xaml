@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter4.View.Page4Views.PrintInvoice"
+             NavigationPage.HasBackButton="True"
+             Title="PrintInvoice">
+    <NavigationPage.TitleView>
+        <StackLayout  
+            BackgroundColor="Gray">
+            <Label 
+                Margin="20,10,0,0"
+                Text="Print Invoice"
+                TextColor="White"
+                FontSize="21"
+                FontFamily="Homemade Sausage"          
+            ></Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+<ScrollView> 
+    <StackLayout 
+        Padding="10">
+        <Label 
+                FontAttributes="Bold"
+                FontSize="16"
+                Text="Product"
+            ></Label>
+        <Label
+            FontSize="16"
+            Text="Apple 2022 MacBook Pro Laptop"></Label>
+        <Grid
+                Margin="0,20,0,10"
+                RowDefinitions="*,*"
+                ColumnDefinitions="*,*"
+                ColumnSpacing="20">
+            <Label
+                 Grid.Row="0"
+                 Grid.Column="0"
+                 FontAttributes="Bold"
+                 FontSize="16"
+                 Text="Purchase Date"></Label>
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="16"
+                Text="01-Fab-2023">
+            </Label>
+            <Label
+                 Grid.Row="0"
+                 Grid.Column="1"
+                 FontAttributes="Bold"
+                 FontSize="16"
+                 Text="Purchase Time"></Label>
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                FontSize="16"
+                Text="04:54 PM">
+            </Label>
+        </Grid>
+        <Label
+            Margin="0,10,0,0"
+            VerticalOptions="Center"
+            FontAttributes="Bold"
+            FontSize="16"
+            Text="Is Premium Customer"></Label>
+        <Label
+            FontSize="16"
+            Text="Yes"></Label>
+        <Grid
+            Margin="0,20"
+            RowDefinitions="*"
+            ColumnSpacing="10"
+            ColumnDefinitions="*,Auto,*">
+            <Line
+                Grid.Row="0"
+                Grid.Column="0" 
+                BackgroundColor="LightGray"
+                HeightRequest="2"></Line>
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                FontSize="16"
+                TextColor="Gray"
+                Text="Customer Details"></Label>
+            <Line
+                Grid.Row="0"
+                Grid.Column="3"
+                BackgroundColor="LightGray"
+                HeightRequest="2"></Line>
+        </Grid>
+        <Label
+            Text="Customer Name"
+            FontSize="16"
+            FontAttributes="Bold"></Label>
+        <Label
+            Margin="0,0,0,10"
+            FontSize="16"
+            Text="John Doe"></Label>
+        <Label
+            Margin="0,10,0,0"
+            FontSize="16"
+            FontAttributes="Bold"
+            Text="Customer Mobile Number"></Label>
+        <Label
+            Margin="0,0,0,10"
+            FontSize="16"
+            Text="234567891"></Label>
+        <Label
+            Margin="0,10,0,0"
+            FontSize="16"
+            FontAttributes="Bold"
+            Text="Address"></Label>
+        <Label
+            FontSize="16"
+            Text="Vankal Chikhli"></Label>
+        <Grid
+            Margin="0,20"
+            RowDefinitions="*"
+            ColumnSpacing="10"
+            ColumnDefinitions="*,Auto,*">
+            <Line
+                Grid.Row="0"
+                Grid.Column="0" 
+                BackgroundColor="LightGray"
+                HeightRequest="2"></Line>
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                FontSize="16"
+                TextColor="Gray"
+                Text="Payment Details"></Label>
+            <Line
+                Grid.Row="0"
+                Grid.Column="3"
+                BackgroundColor="LightGray"
+                HeightRequest="2"></Line>
+        </Grid>
+        <Grid
+            Margin="0,20"
+            RowDefinitions="*,*,*"
+            ColumnDefinitions="*,*"
+            RowSpacing="20"
+            ColumnSpacing="10">
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                FontSize="16"
+                FontAttributes="Bold"
+                Text="Product Quantity"></Label>
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                FontSize="16"
+                HorizontalOptions="EndAndExpand"
+                Text="1"></Label>
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="16"
+                FontAttributes="Bold"
+                Text="Amount"></Label>
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                FontSize="16"
+                HorizontalOptions="EndAndExpand"
+                Text="164565"></Label>
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                FontSize="16"
+                FontAttributes="Bold"
+                Text="Tax"></Label>
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                FontSize="16"
+                HorizontalOptions="EndAndExpand"
+                Text="16565"></Label>
+        </Grid>
+        <Button
+            Margin="0,10,0,0"
+            VerticalOptions="EndAndExpand"
+            BackgroundColor="Gray"
+            FontSize="18"
+            FontFamily="Homemade Sausage"
+            Text="Print"></Button>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>
