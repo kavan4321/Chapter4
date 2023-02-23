@@ -21,17 +21,24 @@ namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
         public double Amount { get; set; }
         public double Tax { get; set; }
 
-
-
-
-
         public void OnPropertyChanged([CallerMemberName] string name = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
+
+        public void PropertyCalling()
+        {
+            _createInvoiceModel.ProductName= ProductName;
+            _createInvoiceModel.PurchaseDate= PurchaseDate;
+            _createInvoiceModel.PurchaseTime = PurchaseTime;
+
+        }
+
         public CreateInvoiceViewModel()
         {
             _createInvoiceModel= new CreateInvoiceModel();
+            PropertyCalling();
         }
 
     }
