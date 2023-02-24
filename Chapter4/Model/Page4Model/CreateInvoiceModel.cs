@@ -10,9 +10,9 @@ namespace Chapter4.Model.Page4Model
         public string CustomerName { get; set; }
         public string CustomerNumber { get; set; }
         public string Address { get; set; }
-        public int Quantity { get; set; }
-        public double Amount { get; set; }
-        public double Tax { get; set; }
+        public double Quantity { get; set; }
+        public string Amount { get; set; }
+        public string Tax { get; set; }
 
     }
 }

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter4.View.Page5Views.LoginScreen"
+             Title="LoginScreen">
+
+    <ScrollView>
+        <StackLayout 
+            Padding="10"
+            Spacing="10"
+            VerticalOptions="Center">
+            <Label
+                Margin="0,10,0,10"
+                Text="Welcome Back"
+                FontSize="30"
+                FontAttributes="Bold"
+            ></Label>
+            <Frame 
+                Padding="5">
+                <Entry
+                    CharacterSpacing="2"
+                    PlaceholderColor="Black"
+                    Placeholder="Enter Your Email">
+                </Entry>
+            </Frame>
+            <Frame 
+                Padding="5">
+                <Entry
+                    CharacterSpacing="2"
+                    PlaceholderColor="Black"
+                    Placeholder="••••••••">
+                </Entry>
+            </Frame>
+            <Grid
+                RowDefinitions="*"
+                ColumnDefinitions="Auto,*,*">
+                <CheckBox 
+                    Grid.Column="0">
+                </CheckBox>
+                <Label
+                    VerticalOptions="Center"
+                    Grid.Column="1"
+                    Text="Remember Me"></Label>
+                <Button
+                    Grid.Column="2"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    HorizontalOptions="EndAndExpand"
+                    Text="Forgot Password"></Button>
+            </Grid>
+            <Button
+                Text="Sign In"></Button>
+            <Frame
+                Padding="5">
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Image
+                        HorizontalOptions="Center"
+                        Source="google"
+                        HeightRequest="35"></Image>
+                    <Label
+                        Margin="5"
+                        VerticalOptions="Center"
+                        Text="Sign in with Google"></Label>
+                </HorizontalStackLayout>
+            </Frame>
+            <HorizontalStackLayout 
+                Margin="10"
+                HorizontalOptions="Center">
+                <Label
+                     VerticalOptions="Center"
+                     Text="Don't have an Account?"></Label>
+                <Button
+                    Text="Sign Up"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="White"></Button>
+            </HorizontalStackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

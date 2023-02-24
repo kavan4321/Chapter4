@@ -3,7 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Chapter4.View.Page4Views.CreateInvoice"
              NavigationPage.HasBackButton="False"
+             xmlns:Invoice="clr-namespace:Chapter4.ViewModel.Page4ViewModel.CreateDetails"
              Title="CreateInvoice">
+    <ContentPage.BindingContext>
+        <Invoice:CreateInvoiceViewModel>
+        </Invoice:CreateInvoiceViewModel>
+    </ContentPage.BindingContext>
     <NavigationPage.TitleView>
         <StackLayout  
             BackgroundColor="Gray">
@@ -28,6 +33,7 @@
             ></Label>
             <Frame Padding="0">
                 <Entry
+                    Text="{Binding ProductName}"
                     ></Entry>
             </Frame>
             <Grid
@@ -49,6 +55,8 @@
                             VerticalOptions="Center"
                             Text="📆"></Label>
                         <DatePicker
+                            Format="d/M/yyyy"
+                            Date="{Binding PurchaseDate}"
                             VerticalOptions="Center"
                             ></DatePicker>
                     </HorizontalStackLayout>
@@ -68,7 +76,9 @@
                             VerticalOptions="Center"
                             FontSize="18"
                             Text="⏲"></Label>
-                        <TimePicker 
+                        <TimePicker
+                            Format="hh:mm tt"
+                            Time="{Binding PurchaseTime}"
                             VerticalOptions="Center"
                             ></TimePicker>
                     </HorizontalStackLayout>
@@ -83,6 +93,7 @@
                     FontSize="16"
                     Text="Is Premium Customer"></Label>
                 <Switch
+                    IsToggled="{Binding IsPremium}"
                     HorizontalOptions="EndAndExpand"
                     VerticalOptions="Center"
                     ></Switch>
@@ -101,7 +112,8 @@
                         Text="Customer Name"></Label>
                     <Frame
                         Padding="0">
-                        <Entry></Entry>
+                        <Entry
+                            Text="{Binding CustomerName}"></Entry>
                     </Frame>
                     <Label
                         FontSize="16"
@@ -110,6 +122,8 @@
                     <Frame
                         Padding="0">
                         <Entry
+                            MaxLength="10"
+                            Text="{Binding CustomerNumber}"
                             Keyboard="Numeric"></Entry>
                     </Frame>
                     <Label
@@ -119,6 +133,7 @@
                     <Frame
                         Padding="0">
                         <Editor
+                            Text="{Binding Address}"
                             HeightRequest="100"
                             ></Editor>
                     </Frame>
@@ -139,6 +154,8 @@
                     <StackLayout Orientation="Horizontal">
                         <Stepper
                             Value="1"
+                            ValueChanged="Stepper_ValueChanged"
+                            x:Name="StepperValue"
                             Increment="1"
                             Minimum="1"></Stepper>
                         <Label
@@ -147,7 +164,7 @@
                             FontSize="16"
                             FontAttributes="Bold"
                             VerticalOptions="Center"
-                            Text="1"></Label>
+                            Text="{Binding Quantity}"></Label>
                     </StackLayout>
                     <Label
                         FontSize="16"
@@ -156,6 +173,7 @@
                     <Frame
                         Padding="0">
                         <Entry
+                            Text="{Binding Amount}"
                             Keyboard="Numeric"></Entry>
                     </Frame>
                     <Label
@@ -165,6 +183,7 @@
                     <Frame
                         Padding="0">
                         <Entry
+                            Text="{Binding Tax}"
                             Keyboard="Numeric"></Entry>
                     </Frame>
                 </StackLayout>
@@ -174,6 +193,8 @@
                 FontFamily="Homemade Sausage"
                 FontSize="20"
                 BackgroundColor="Gray"
+                Command="{Binding GenerateCommand}"
+                Clicked="Button_Clicked"
                 Text="Generate Invoice"></Button>
     </StackLayout>
     </ScrollView>

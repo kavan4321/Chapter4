@@ -55,6 +55,10 @@
 	  <None Remove="Resources\Fonts\Winkle-Regular.ttf" />
 	  <None Remove="Resources\Images\alert.png" />
 	  <None Remove="Resources\Images\back.png" />
+	  <None Remove="Resources\Images\chairone.png" />
+	  <None Remove="Resources\Images\chairthree.png" />
+	  <None Remove="Resources\Images\chairtwo.png" />
+	  <None Remove="Resources\Images\google.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\profile.png" />
 	  <None Remove="Resources\Images\quiz.jpg" />
@@ -88,6 +92,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Page4Views\PrintInvoice.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Page5Views\DashBordScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Page5Views\LoginScreen.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
