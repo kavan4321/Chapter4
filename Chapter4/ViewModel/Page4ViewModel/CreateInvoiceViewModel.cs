@@ -4,6 +4,7 @@ using Microsoft.Maui.Controls;
 using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Windows.Input;
 
 namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
@@ -19,10 +20,11 @@ namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
+
         public ICommand GenerateCommand { get; private set; }
         public string ProductName { get; set; }
-        public string PurchaseDate { get; set; }
-        public string PurchaseTime { get; set; }
+        public DateTime PurchaseDate { get; set; }
+        public TimeSpan PurchaseTime { get; set; }
         public bool IsPremium { get; set; }
         public string CustomerName { get; set; }
         public string CustomerNumber { get; set; }
@@ -38,21 +40,15 @@ namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
             }
 
         }
-
-        
-
-
+     
+        public bool Success { get; set; }
         public string Amount { get; set; }
         public string Tax { get; set; }
 
-        public void ValuePass()
-        {
-            
-        }
+      
 
 
-
-        public  void PropertyCalling()
+        public  void Validation()
         {
             if((string.IsNullOrEmpty(ProductName) && string.IsNullOrWhiteSpace(ProductName)) &&
                (string.IsNullOrEmpty(CustomerName) && string.IsNullOrWhiteSpace(CustomerName)) &&
@@ -94,16 +90,26 @@ namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
             }
             else
             {
-                _createInvoiceModel.ProductName = ProductName;
-                _createInvoiceModel.PurchaseDate = PurchaseDate;
-                _createInvoiceModel.PurchaseTime = PurchaseTime;
-                _createInvoiceModel.CustomerName = CustomerName;
-                _createInvoiceModel.CustomerNumber = CustomerNumber;
-                _createInvoiceModel.Address = Address;
-                _createInvoiceModel.Amount = Amount;
-                _createInvoiceModel.Tax = Tax;  
-               
+                Success = true;             
             }
+        }
+        public void PropertyCalling()
+        {
+            _createInvoiceModel.ProductName = ProductName;
+            _createInvoiceModel.PurchaseDate = PurchaseDate.ToString("dd-MMM-yyyy");
+            _createInvoiceModel.PurchaseTime = PurchaseTime.ToString();
+            _createInvoiceModel.IsPremium = IsPremium;
+            _createInvoiceModel.CustomerName = CustomerName;
+            _createInvoiceModel.CustomerNumber = CustomerNumber;
+            _createInvoiceModel.Address = Address;
+            _createInvoiceModel.Amount = Amount;
+            _createInvoiceModel.Tax = Tax;
+        }
+
+        public void Methods()
+        {
+            Validation();
+            PropertyCalling();
         }
 
         public CreateInvoiceViewModel()

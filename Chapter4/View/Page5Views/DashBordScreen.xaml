@@ -3,10 +3,218 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Chapter4.View.Page5Views.DashBordScreen"
              Title="DashBordScreen">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+    <StackLayout
+        Padding="10,20,10,20">
+            <Grid
+                RowDefinitions="*"
+                ColumnDefinitions="*,70">
+                <Label
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    Text="Hii Jezz&#x0a;Find Your Furniture needs"></Label>
+                <Frame
+                    CornerRadius="20"
+                    Padding="20"
+                    Grid.Column="1"
+                    VerticalOptions="Center">
+                    <StackLayout
+                        WidthRequest="70">
+                        <Frame
+                            CornerRadius="60"
+                            BorderColor="White"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            IsClippedToBounds="True"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            <Image
+                                WidthRequest="30"
+                                HeightRequest="30"
+                                Source="Profile"></Image>
+                        </Frame>
+                        <Label
+                            HorizontalOptions="Center"
+                            Text="Profile"></Label>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            <Grid
+                Margin="0,20,0,0"
+                ColumnSpacing="10"
+                RowDefinitions="*"
+                ColumnDefinitions="*,*">
+                <Frame
+                    CornerRadius="15"
+                    Padding="5"
+                    Grid.Column="0">
+                    <HorizontalStackLayout>
+                        <Image
+                            Margin="10,0,10,0"
+                            HeightRequest="20"
+                            Source="profile"></Image>
+                        <VerticalStackLayout 
+                            Margin="10,0,0,0">
+                            <Label
+                                FontAttributes="Bold"
+                                Text="RP 120,000"></Label>
+                            <Label
+                                TextColor="Gray"
+                                Text="Fun Saida"></Label>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame
+                    CornerRadius="15"
+                   Padding="5"
+                    Grid.Column="1">
+                    <HorizontalStackLayout>
+                        <Image
+                            Margin="10,0,10,0"
+                            HeightRequest="20"
+                            Source="profile"></Image>
+                        <VerticalStackLayout 
+                            Margin="10,0,0,0">
+                            <Label
+                                FontAttributes="Bold"
+                                Text="10000 Pts"></Label>
+                            <Label
+                                TextColor="Gray"
+                                Text="Fun Points"></Label>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+            </Grid>
+            <Label
+                Margin="10,20,0,0"
+                FontSize="18"
+                TextColor="Gray"
+                FontAttributes="Bold"
+                Text="For You"></Label>
+            <Frame 
+               Padding="0"
+                CornerRadius="30"
+                Margin="0,20,0,0">
+                <Grid                    
+                    RowDefinitions="*"
+                    ColumnDefinitions="*,Auto">
+                    <StackLayout
+                        Grid.Column="0"
+                        BackgroundColor="Gray">
+                        <Label
+                            Margin="20,20,0,0"
+                            TextColor="White"
+                            Text="Furniture">
+                        </Label>
+                        <Label                           
+                            Margin="20,0,0,0"
+                            TextColor="White"
+                            Text="Super Complete!"></Label>
+                        <Label
+                            Margin="20,0,0,0"
+                            FontSize="18"
+                            TextColor="White"
+                            Text="CASBACK UP TO"></Label>
+                        <Label
+                             Margin="20,10,0,0"
+                             FontAttributes="Bold"
+                             FontSize="30"
+                             TextColor="White"
+                             Text="55%✨"></Label>
+                        <Label
+                            HorizontalOptions="End"
+                            Margin="0,5,5,20"
+                            TextColor="White"
+                            Text="*T&amp;C Applicable">
+                        </Label>
+                    </StackLayout>
+                    <HorizontalStackLayout 
+                        BackgroundColor="LightGray"
+                        Grid.Column="1">
+                        <Image
+                            Margin="20,0,0,0"
+                            HorizontalOptions="Center"
+                            HeightRequest="100"
+                            WidthRequest="100"
+                            Source="chairone"></Image>
+                   </HorizontalStackLayout>
+                </Grid>
+            </Frame>
+            <Grid 
+                ColumnDefinitions="*,*"
+                Margin="10,20">
+                <Label
+                    Grid.Column="0"
+                    FontSize="18"
+                    TextColor="Gray"
+                    FontAttributes="Bold"
+                    Text="Top picks"></Label>
+                <Label
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    FontSize="18"
+                    TextColor="Gray"
+                    FontAttributes="Bold"
+                    Text="🔠"></Label>
+            </Grid>
+            <Grid
+                Margin="0,0,0,30"
+                ColumnSpacing="10"
+                RowDefinitions="*"
+                ColumnDefinitions="*,*">
+                <Frame                    
+                    Grid.Column="0">
+                    <StackLayout 
+                        Spacing="3">
+                        <Image
+                            HeightRequest="100"
+                            Source="chairtwo"></Image>
+                        <Label
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            Text="Floridaze Chair"></Label>
+                        <HorizontalStackLayout 
+                            HorizontalOptions="Center">
+                            <Label
+                                Text="⭐4.9|"></Label>
+                            <Label
+                                Text="Sold 300"></Label>
+                        </HorizontalStackLayout>
+                        <Label
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            Text="$420"></Label>
+                    </StackLayout>
+                </Frame>
+                <Frame              
+                    Grid.Column="1">
+                    <StackLayout>
+                        <Image 
+                            HeightRequest="100"
+                            Source="chairthree"></Image>
+                        <Label
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            Text="vualerel Chair"></Label>
+                        <HorizontalStackLayout 
+                            HorizontalOptions="Center">
+                            <Label
+                                Text="⭐4.9|"></Label>
+                            <Label
+                                Text="Sold 400"></Label>
+                        </HorizontalStackLayout>
+                        <Label
+                            FontSize="18"                         
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            Text="$420"></Label>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

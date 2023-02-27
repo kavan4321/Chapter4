@@ -12,28 +12,41 @@ public partial class CreateInvoice : ContentPage
 		_createInvoiceViewModel=(CreateInvoiceViewModel)BindingContext;
 	}
 
-    private async void Button_Clicked(object sender, EventArgs e)
+    private void Button_Clicked(object sender, EventArgs e)
     {
-      
-        //create object of Details
-        CreateInvoiceModel CreateInvoiceDetails = new()
-        {
-            ProductName =_createInvoiceViewModel.ProductName,
-            Quantity=_createInvoiceViewModel.Quantity,
-            PurchaseDate= _createInvoiceViewModel.PurchaseDate,
-            PurchaseTime= _createInvoiceViewModel.PurchaseTime,
-            CustomerName= _createInvoiceViewModel.CustomerName,
-            CustomerNumber= _createInvoiceViewModel.CustomerNumber,
-            Address= _createInvoiceViewModel.Address,
-            Amount= _createInvoiceViewModel.Amount,
-            Tax = _createInvoiceViewModel.Tax,
-        };
-        //navigation to next pagre
-        await Navigation.PushAsync(new PrintInvoice(CreateInvoiceDetails));
+        Button_Methods();
     }
 
     private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
     {
         _createInvoiceViewModel.Quantity=StepperValue.Value;
+    }
+
+
+    public async void Button_Methods()
+    {
+        //create object of Details
+        CreateInvoiceModel CreateInvoiceDetails = new()
+        {
+            ProductName = _createInvoiceViewModel.ProductName,
+            Quantity = _createInvoiceViewModel.Quantity,
+            PurchaseDate = _createInvoiceViewModel.PurchaseDate.ToString("dd-MMM-yyyy"),
+            PurchaseTime = _createInvoiceViewModel.PurchaseTime.ToString(),
+            IsPremium= _createInvoiceViewModel.IsPremium,
+            CustomerName = _createInvoiceViewModel.CustomerName,
+            CustomerNumber = _createInvoiceViewModel.CustomerNumber,
+            Address = _createInvoiceViewModel.Address,
+            Amount = _createInvoiceViewModel.Amount,
+            Tax = _createInvoiceViewModel.Tax,
+        };
+        //navigation to next pagre   
+        if (_createInvoiceViewModel.Success == false)
+        {
+            _createInvoiceViewModel.Validation();
+        }
+        else
+        {
+            await Navigation.PushAsync(new PrintInvoice(CreateInvoiceDetails));
+        }
     }
 }

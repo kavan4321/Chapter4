@@ -18,27 +18,32 @@ namespace Chapter4.ViewModel.Page5ViewModel.LoginSign
 
         private readonly LoginScreenModel _loginScreenModel;
        
-        public ICommand SignUpCommand { get;private set; }
+        public ICommand SignInCommand { get;private set; }
         public string Email { get; set; }
         public string Password { get; set; }
 
         
-        public bool Success 
-        {
-            get => false;
-            set { }
-        }
+        public bool Success { get; set; }
+
 
         public void Validation()
         {
-           
-
-            if ((string.IsNullOrEmpty(Email)) || (string.IsNullOrWhiteSpace(Email)) &&
-                (string.IsNullOrEmpty(Password)) || (string.IsNullOrWhiteSpace(Password)))
+       
+            if (((string.IsNullOrEmpty(Email)) || (string.IsNullOrWhiteSpace(Email))) &&
+                ((string.IsNullOrEmpty(Password)) || (string.IsNullOrWhiteSpace(Password)))
+                ) 
             {
                 Toast.Make("Please Enter Email and Password",CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
             }
-            else if (!Email.Contains('@') && (!Email.Contains('.')))
+            else if( (string.IsNullOrEmpty(Email)) || (string.IsNullOrWhiteSpace(Email))  )
+            {
+                Toast.Make("Please Enter Email", CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
+            }
+            else if( (string.IsNullOrEmpty(Password)) || (string.IsNullOrWhiteSpace(Password)) )
+            {
+                Toast.Make("Please Enter Password", CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
+            }
+            else if (!Email.Contains('@') || (!Email.Contains('.')))
             {
                 Toast.Make("Enter Valid Email", CommunityToolkit.Maui.Core.ToastDuration.Short).Show();
             }

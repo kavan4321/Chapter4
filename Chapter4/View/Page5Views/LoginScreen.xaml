@@ -2,8 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Chapter4.View.Page5Views.LoginScreen"
+             xmlns:LoginPage="clr-namespace:Chapter4.ViewModel.Page5ViewModel.LoginSign"
              Title="LoginScreen">
-
+    <ContentPage.BindingContext>
+        <LoginPage:LoginScreenViewModel></LoginPage:LoginScreenViewModel>
+    </ContentPage.BindingContext>
     <ScrollView>
         <StackLayout 
             Padding="10"
@@ -20,6 +23,7 @@
                 <Entry
                     CharacterSpacing="2"
                     PlaceholderColor="Black"
+                    Text="{Binding Email}"
                     Placeholder="Enter Your Email">
                 </Entry>
             </Frame>
@@ -28,6 +32,8 @@
                 <Entry
                     CharacterSpacing="2"
                     PlaceholderColor="Black"
+                    IsPassword="True"
+                    Text="{Binding Password}"
                     Placeholder="••••••••">
                 </Entry>
             </Frame>
@@ -49,6 +55,8 @@
                     Text="Forgot Password"></Button>
             </Grid>
             <Button
+                Clicked="Button_Clicked"
+                BackgroundColor="Black"
                 Text="Sign In"></Button>
             <Frame
                 Padding="5">
@@ -75,6 +83,7 @@
                     TextColor="Black"
                     BackgroundColor="White"></Button>
             </HorizontalStackLayout>
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>
