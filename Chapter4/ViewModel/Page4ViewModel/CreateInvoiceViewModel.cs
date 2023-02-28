@@ -20,12 +20,27 @@ namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-
+        public event EventHandler InvoiceEvent;
         public ICommand GenerateCommand { get; private set; }
         public string ProductName { get; set; }
         public DateTime PurchaseDate { get; set; }
-        public TimeSpan PurchaseTime { get; set; }
+        public DateTime PurchaseTime { get; set; }
         public bool IsPremium { get; set; }
+ 
+        public string Premium
+        {
+            get 
+            {
+                if (IsPremium == false)
+                {
+                    return "No";
+                }
+                else
+                {
+                    return "Yes";
+                }
+            }          
+        }
         public string CustomerName { get; set; }
         public string CustomerNumber { get; set; }
         public string Address { get; set; }
@@ -39,13 +54,10 @@ namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
                  OnPropertyChanged();
             }
 
-        }
-     
-        public bool Success { get; set; }
+        }   
         public string Amount { get; set; }
         public string Tax { get; set; }
-
-      
+     
 
 
         public  void Validation()
@@ -90,32 +102,15 @@ namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
             }
             else
             {
-                Success = true;             
+               InvoiceEvent?.Invoke(this,new EventArgs());          
             }
         }
-        public void PropertyCalling()
-        {
-            _createInvoiceModel.ProductName = ProductName;
-            _createInvoiceModel.PurchaseDate = PurchaseDate.ToString("dd-MMM-yyyy");
-            _createInvoiceModel.PurchaseTime = PurchaseTime.ToString();
-            _createInvoiceModel.IsPremium = IsPremium;
-            _createInvoiceModel.CustomerName = CustomerName;
-            _createInvoiceModel.CustomerNumber = CustomerNumber;
-            _createInvoiceModel.Address = Address;
-            _createInvoiceModel.Amount = Amount;
-            _createInvoiceModel.Tax = Tax;
-        }
-
-        public void Methods()
-        {
-            Validation();
-            PropertyCalling();
-        }
-
+      
+     
         public CreateInvoiceViewModel()
         {
             _createInvoiceModel= new CreateInvoiceModel();
-            GenerateCommand = new Command(PropertyCalling);
+            GenerateCommand = new Command(Validation);
         }
 
     }

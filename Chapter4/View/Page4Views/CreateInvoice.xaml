@@ -194,7 +194,6 @@
                 FontSize="20"
                 BackgroundColor="Gray"
                 Command="{Binding GenerateCommand}"
-                Clicked="Button_Clicked"
                 Text="Generate Invoice"></Button>
     </StackLayout>
     </ScrollView>

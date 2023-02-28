@@ -10,12 +10,15 @@ public partial class CreateInvoice : ContentPage
 	{
 		InitializeComponent();
 		_createInvoiceViewModel=(CreateInvoiceViewModel)BindingContext;
+        _createInvoiceViewModel.InvoiceEvent += _createInvoiceViewModel_InvoiceEvent;
 	}
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private void _createInvoiceViewModel_InvoiceEvent(object sender, EventArgs e)
     {
-        Button_Methods();
+        Methods();
     }
+
+   
 
     private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
     {
@@ -23,7 +26,7 @@ public partial class CreateInvoice : ContentPage
     }
 
 
-    public async void Button_Methods()
+    public async void Methods()
     {
         //create object of Details
         CreateInvoiceModel CreateInvoiceDetails = new()
@@ -31,7 +34,8 @@ public partial class CreateInvoice : ContentPage
             ProductName = _createInvoiceViewModel.ProductName,
             Quantity = _createInvoiceViewModel.Quantity,
             PurchaseDate = _createInvoiceViewModel.PurchaseDate.ToString("dd-MMM-yyyy"),
-            PurchaseTime = _createInvoiceViewModel.PurchaseTime.ToString(),
+            PurchaseTime = _createInvoiceViewModel.PurchaseTime.ToString("hh:mm tt"),
+            Premium= _createInvoiceViewModel.Premium,
             IsPremium= _createInvoiceViewModel.IsPremium,
             CustomerName = _createInvoiceViewModel.CustomerName,
             CustomerNumber = _createInvoiceViewModel.CustomerNumber,
@@ -40,13 +44,6 @@ public partial class CreateInvoice : ContentPage
             Tax = _createInvoiceViewModel.Tax,
         };
         //navigation to next pagre   
-        if (_createInvoiceViewModel.Success == false)
-        {
-            _createInvoiceViewModel.Validation();
-        }
-        else
-        {
-            await Navigation.PushAsync(new PrintInvoice(CreateInvoiceDetails));
-        }
+        await Navigation.PushAsync(new PrintInvoice(CreateInvoiceDetails));
     }
 }

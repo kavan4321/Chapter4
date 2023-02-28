@@ -16,14 +16,12 @@ namespace Chapter4.ViewModel.Page5ViewModel.LoginSign
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(Name));
         }
 
-        private readonly LoginScreenModel _loginScreenModel;
-       
+        private readonly LoginScreenModel _loginScreenModel;  
         public ICommand SignInCommand { get;private set; }
         public string Email { get; set; }
         public string Password { get; set; }
 
-        
-        public bool Success { get; set; }
+        public event EventHandler SignInEvent;
 
 
         public void Validation()
@@ -65,12 +63,13 @@ namespace Chapter4.ViewModel.Page5ViewModel.LoginSign
             }
             else
             {
-                Success = true;
+                SignInEvent?.Invoke(this,new EventArgs());
             }
         }
         public LoginScreenViewModel()
         { 
             _loginScreenModel = new LoginScreenModel();
+            SignInCommand = new Command(Validation);
         }
     }
 }

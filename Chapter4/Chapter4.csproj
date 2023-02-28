@@ -58,8 +58,12 @@
 	  <None Remove="Resources\Images\chairone.png" />
 	  <None Remove="Resources\Images\chairthree.png" />
 	  <None Remove="Resources\Images\chairtwo.png" />
+	  <None Remove="Resources\Images\confirm.png" />
+	  <None Remove="Resources\Images\debitcard.png" />
 	  <None Remove="Resources\Images\google.png" />
+	  <None Remove="Resources\Images\gpay.png" />
 	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\mastercard.png" />
 	  <None Remove="Resources\Images\profile.png" />
 	  <None Remove="Resources\Images\quiz.jpg" />
 	  <None Remove="Resources\Images\ticket.png" />
@@ -98,6 +102,21 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Page5Views\LoginScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Page6Views\ConfirmScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Page6Views\CreditCardScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Page6Views\DebitCardScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Page6Views\GpayScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Page6Views\PaymentMethod.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chapter4.View.Page6Views.PaymentMethod"
+             xmlns:Pay="clr-namespace:Chapter4.ViewModel.Page6ViewModel.SelectMethod"
+             NavigationPage.HasNavigationBar="False"
+             Title="PaymentMethod">
+    
+    <ContentPage.BindingContext>
+        <Pay:PaymentMethodViewModel></Pay:PaymentMethodViewModel>
+    </ContentPage.BindingContext>
+    <ScrollView>
+    <StackLayout
+        Padding="10">
+            <StackLayout 
+                VerticalOptions="Center"
+                Orientation="Horizontal">
+                <Label 
+                    FontSize="17"
+                    FontAttributes="Bold"
+                    Text="Payment Method"/>
+                <Frame
+                    Padding="0"
+                    HorizontalOptions="EndAndExpand"
+                    CornerRadius="30"
+                    HeightRequest="30"
+                    WidthRequest="30">
+                    <Image               
+                        Source="profile"></Image>
+                </Frame>
+            </StackLayout>
+            <Label
+                Margin="0,30,0,20"
+                FontSize="19"
+                FontAttributes="Bold"
+                Text="Select Your Payment Method"></Label>
+            <Label
+                Text="Add a new credit/debit card"></Label>
+            <Grid 
+                Margin="0,30"
+                RowSpacing="10"
+                RowDefinitions="*,*,*"
+                ColumnDefinitions="*,*">
+
+                <RadioButton
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="16"
+                    GroupName="Method"
+                    IsChecked="{Binding CreditCard}"
+                    VerticalOptions="Center"
+                    Content="Credit Card">
+                </RadioButton>
+                <Image
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    HeightRequest="40"
+                    Source="gpay"></Image>
+
+
+
+
+                <RadioButton
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="16"
+                    GroupName="Method"
+                    IsChecked="{Binding DebitCard}"
+                    Content="Debit Card">
+                </RadioButton>
+                <Image
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="EndAndExpand"
+                    HeightRequest="40"
+                    Source="gpay"></Image>
+
+
+                <RadioButton
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontSize="16"
+                    GroupName="Method"
+                    IsChecked="{Binding Gpay}"
+                    Content="G pay">
+                </RadioButton>
+                <Image
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalOptions="EndAndExpand"
+                    HeightRequest="40"
+                    Source="gpay"></Image>
+            </Grid>
+            <Button
+                CornerRadius="30"
+                Text="Next"
+                Command="{Binding NextCommand}"
+                VerticalOptions="EndAndExpand"></Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

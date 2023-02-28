@@ -9,21 +9,13 @@ public partial class LoginScreen : ContentPage
 	{
 		InitializeComponent();
 		_loginScreenViewModel = (LoginScreenViewModel)BindingContext;
+        _loginScreenViewModel.SignInEvent += _loginScreenViewModel_SignInEvent;
 	}
 
-
-    private async void Button_Clicked(object sender, EventArgs e)
+    private async void _loginScreenViewModel_SignInEvent(object sender, EventArgs e)
     {
-		
-		    
-		if (_loginScreenViewModel.Success==false)
-		{
-            _loginScreenViewModel.Validation();
-		}
-		else
-		{
-			_loginScreenViewModel.Success = false;
-            await Navigation.PushAsync(new DashBordScreen());
-		}
+        await Navigation.PushAsync(new DashBordScreen());
     }
+
+   
 }
