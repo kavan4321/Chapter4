@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Chapter4.View.Page1"
              xmlns:Booking="clr-namespace:Chapter4.ViewModel.Train"
+             NavigationPage.HasNavigationBar="False"
              Title="Page1">
     <ContentPage.BindingContext>
         <Booking:Page1ViewModel></Booking:Page1ViewModel>
@@ -10,7 +11,7 @@
     <ScrollView>
         <StackLayout>
             <StackLayout
-                Margin="10,30,10,10"
+                Margin="10"
                 Orientation="Horizontal">
                 <VerticalStackLayout>
                     <Label
@@ -57,6 +58,7 @@
                                 Text="From Station"></Label>
                                 <Entry     
                                  Margin="10,0,0,0"
+                                Text="{Binding FromStation}"
                                 Placeholder="From Station"
                                 FontSize="16"></Entry>
                             </VerticalStackLayout>
@@ -81,6 +83,7 @@
                                 Text="To Station"></Label>
                                 <Entry     
                                  Margin="10,0,0,0"
+                                    Text="{Binding ToStation}"
                                 Placeholder="To Station"
                                 FontSize="16"></Entry>
                             </VerticalStackLayout>
@@ -90,6 +93,7 @@
                         Grid.Column="1"
                         Grid.RowSpan="2"
                         Margin="0,0,10,0"
+                         Command="{Binding SwapCommand}"
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         HeightRequest="50"
