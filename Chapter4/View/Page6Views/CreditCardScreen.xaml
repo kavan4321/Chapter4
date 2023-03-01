@@ -11,34 +11,31 @@
     <StackLayout
         Spacing="20"
         Padding="10">
-        <FlexLayout 
-                    
-             Direction="Row"
-             JustifyContent="SpaceBetween"
-             AlignContent="SpaceBetween">
+        <StackLayout  
+            Orientation="Horizontal">
             <ImageButton
+                Clicked="ImageButtonClicked"
                 HorizontalOptions="Start"
                 HeightRequest="30"
                 WidthRequest="30"
-                Clicked="ImageButtonClicked"
                 Source="back"></ImageButton>
             <Label  
                 FontSize="18"
                 FontAttributes="Bold"
-                HorizontalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
                 VerticalOptions="Center"
                 Text="Credit Payment Method"/>
             <Frame
                 Padding="0"
                 VerticalOptions="Center"
-                HorizontalOptions="EndAndExpand"
+                HorizontalOptions="End"
                 CornerRadius="30"
                 HeightRequest="30"
                 WidthRequest="30">
                 <Image               
                     Source="profile"></Image>
             </Frame>
-        </FlexLayout>
+        </StackLayout>
 
         <Frame
             Margin="0,10,0,10">

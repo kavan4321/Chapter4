@@ -9,12 +9,12 @@ namespace Chapter4.ViewModel.Page6ViewModel.Confirms
 
     public class ConfirmViewModel : INotifyPropertyChanged
     {
-        private  CreditModel _creditModelDetails;
-        public CreditModel CreditModelDetails
+        private  CardDetails _cardDetails;
+        public CardDetails cardDetails
         {
-            get { return _creditModelDetails; }
+            get { return _cardDetails; }
             set {
-                _creditModelDetails = value;
+                _cardDetails = value;
                 OnPropertyChanged();
             }
         }

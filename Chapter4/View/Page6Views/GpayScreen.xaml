@@ -2,11 +2,50 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Chapter4.View.Page6Views.GpayScreen"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="CornflowerBlue"
+             xmlns:GPAY="clr-namespace:Chapter4.ViewModel.Page6ViewModel.Gpays"
              Title="GpayScreen">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.BindingContext>
+        <GPAY:GpayViewModel></GPAY:GpayViewModel>
+    </ContentPage.BindingContext>
+    <ScrollView>    
+        <StackLayout
+            Padding="10">
+            <StackLayout 
+                Margin="0,30,0,0"
+                VerticalOptions="CenterAndExpand">
+                <Label               
+                    TextColor="White"
+                    FontSize="30"  
+                    HorizontalOptions="Center"               
+                    Text="{Binding DisplayAmount,StringFormat='&#x20b9; {0}'}"></Label>
+                <Label
+                    TextColor="White"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Text="{Binding DisplayName,StringFormat='Payment to {0}'}"/>
+            </StackLayout>
+            <Frame
+                CornerRadius="0"
+                Margin="0,20,0,0"
+                VerticalOptions="EndAndExpand">
+                <StackLayout Spacing="10">
+                    <Entry
+                        TextChanged="EntryTextChanged"
+                        Text="{Binding Name}"
+                        Placeholder="Enter Name"></Entry>
+                    <Entry
+                        Keyboard="Numeric"
+                        TextChanged="EntryTextChanged"
+                        Text="{Binding Amount}"
+                        Placeholder="Enter Amount"></Entry>
+                    <Button
+                        Command="{Binding PayCommand}"
+                        CornerRadius="30"
+                        Text="Proced to Pay"></Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

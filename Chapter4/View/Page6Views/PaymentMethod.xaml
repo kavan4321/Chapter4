@@ -17,6 +17,7 @@
                 Orientation="Horizontal">
                 <Label 
                     FontSize="17"
+                    VerticalOptions="Center"
                     FontAttributes="Bold"
                     Text="Payment Method"/>
                 <Frame
@@ -56,7 +57,7 @@
                     Grid.Column="1"
                     HorizontalOptions="End"
                     HeightRequest="40"
-                    Source="gpay"></Image>
+                    Source="creditcard"></Image>
 
 
 
@@ -74,7 +75,7 @@
                     Grid.Column="1"
                     HorizontalOptions="EndAndExpand"
                     HeightRequest="40"
-                    Source="gpay"></Image>
+                    Source="cirrus"></Image>
 
 
                 <RadioButton

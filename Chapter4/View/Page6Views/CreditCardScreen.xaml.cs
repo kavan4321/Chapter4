@@ -30,11 +30,11 @@ public partial class CreditCardScreen : ContentPage
 
     public async void PayDetails()
     {
-        CreditModel creditModel = new()
+        CardDetails cardDetails = new()
         {
             Amount = _viewModel.Amount,
-            Method = "Debit card"
+            Method = "Credit card"
         };
-        await Navigation.PushAsync(new ConfirmScreen(creditModel));
+        await Navigation.PushAsync(new ConfirmScreen(cardDetails));
     }
 }

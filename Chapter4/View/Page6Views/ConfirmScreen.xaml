@@ -20,17 +20,19 @@
                 TextColor="White"
                 FontSize="30"
                 HorizontalOptions="Center"
-                Text="{Binding CreditModelDetails.Amount,StringFormat='&#x20b9; {0}'}"></Label>
+                Text="{Binding cardDetails.Amount,StringFormat='&#x20b9; {0}'}"></Label>
             <Label
                 TextColor="White"
                 FontSize="18"
                 HorizontalOptions="Center"
-                Text="{Binding CreditModelDetails.Method,StringFormat='Payment Successfull via {0}'}"/>
+                Text="{Binding cardDetails.Method,StringFormat='Payment Successfull via {0}'}"/>
             <Button
+                x:Name="GetIt"
                 TextColor="White"
                 Margin="0,10,0,20"
                 CornerRadius="30"
                 WidthRequest="100"
+               Clicked="GetIt_Clicked"
                 HorizontalOptions="Center"
                 Text="Get it"></Button>
         </StackLayout>

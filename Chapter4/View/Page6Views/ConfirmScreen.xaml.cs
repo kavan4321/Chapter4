@@ -7,11 +7,15 @@ namespace Chapter4.View.Page6Views;
 public partial class ConfirmScreen : ContentPage
 {
 	private readonly ConfirmViewModel _confirmViewModel;
-	public ConfirmScreen(CreditModel creditModel)
+	public ConfirmScreen(CardDetails cardDetails)
 	{
 		InitializeComponent();
         _confirmViewModel = (ConfirmViewModel)BindingContext;
-        _confirmViewModel.CreditModelDetails = creditModel;
-
+        _confirmViewModel.cardDetails= cardDetails;
 	}
+
+    private async void GetIt_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PopToRootAsync();
+    }
 }
