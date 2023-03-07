@@ -68,7 +68,7 @@
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\loved.png" />
 	  <None Remove="Resources\Images\profile.png" />
-	  <None Remove="Resources\Images\quiz.jpg" />
+	  <None Remove="Resources\Images\quizz.png" />
 	  <None Remove="Resources\Images\ticket.png" />
 	  <None Remove="Resources\Images\train.jpg" />
 	  <None Remove="Resources\Images\truck.jpg" />

@@ -9,8 +9,7 @@
         <PrintInvoice:PrintInvoiceViewModel></PrintInvoice:PrintInvoiceViewModel>
     </ContentPage.BindingContext>
     <NavigationPage.TitleView>
-        <StackLayout  
-            BackgroundColor="Gray">
+       
             <Label 
                 Margin="20,10,0,0"
                 Text="Print Invoice"
@@ -18,7 +17,7 @@
                 FontSize="21"
                 FontFamily="Homemade Sausage"          
             ></Label>
-        </StackLayout>
+       
     </NavigationPage.TitleView>
 <ScrollView> 
     <StackLayout 

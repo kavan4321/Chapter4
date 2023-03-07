@@ -5,6 +5,7 @@
              xmlns:Booking="clr-namespace:Chapter4.ViewModel.Train"
              NavigationPage.HasNavigationBar="False"
              Title="Page1">
+    
     <ContentPage.BindingContext>
         <Booking:Page1ViewModel></Booking:Page1ViewModel>
     </ContentPage.BindingContext>
@@ -22,12 +23,12 @@
                         FontAttributes="Bold"
                         FontSize="25"
                         Text="Where are you going?"
-                ></Label>
+                    ></Label>
                 </VerticalStackLayout>
                 <Image
                     Source="profile"
                     HorizontalOptions="EndAndExpand"
-                HeightRequest="40"></Image>
+                    HeightRequest="40"></Image>
             </StackLayout>
             <Frame
                 BorderColor="White"
@@ -46,24 +47,22 @@
                             Grid.ColumnSpan="2"
                             CornerRadius="20"
                             BackgroundColor="White">
-
                             <VerticalStackLayout
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="2"
-                            BackgroundColor="White">
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                BackgroundColor="White">
                                 <Label
-                                Margin="10,5,0,0"
-                                TextColor="LightGray"
-                                Text="From Station"></Label>
+                                    Margin="10,5,0,0"
+                                    TextColor="LightGray"
+                                    Text="From Station"></Label>
                                 <Entry     
-                                 Margin="10,0,0,0"
-                                Text="{Binding FromStation}"
-                                Placeholder="From Station"
-                                FontSize="16"></Entry>
+                                    Margin="10,0,0,0"
+                                    Text="{Binding FromStation}"
+                                    Placeholder="From Station"
+                                    FontSize="16"></Entry>
                             </VerticalStackLayout>
                         </Frame>
-
                         <Frame
                             Padding="0"
                             Grid.Row="1"
@@ -89,11 +88,11 @@
                             </VerticalStackLayout>
                         </Frame>
                         <Button
-                         Grid.Row="0"
+                        Grid.Row="0"
                         Grid.Column="1"
                         Grid.RowSpan="2"
                         Margin="0,0,10,0"
-                         Command="{Binding SwapCommand}"
+                        Command="{Binding SwapCommand}"
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         HeightRequest="50"
@@ -116,7 +115,7 @@
                            Grid.Row="0" >
                             <VerticalStackLayout>
                                 <Label
-                                     Margin="10,5,0,0"
+                                    Margin="10,5,0,0"
                                     TextColor="LightGray"
                                     Text="Departure"></Label>
                                 <DatePicker 
@@ -146,21 +145,22 @@
                         </Frame>
                     </Grid>
                     <Button
-                    Margin="0,10,0,0"
-                    HeightRequest="59"
-                    Text="Search Train"
-                    CornerRadius="10"></Button>
+                        Margin="0,10,0,0"
+                        HeightRequest="59"                       
+                        Command="{Binding SearchCommmand}"
+                        Text="Search Train"
+                        CornerRadius="10"></Button>
                 </StackLayout>
             </Frame>
             <StackLayout
-                Margin="10"
-                Orientation="Horizontal">
+                    Margin="10"
+                    Orientation="Horizontal">
                 <Label   
-                FontSize="22"
-                FontAttributes="Bold"
-                Text="Upcomming Ticket"
-                VerticalOptions="Center"
-                HorizontalTextAlignment="Start"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    Text="Upcomming Ticket"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Start"
                 ></Label>
                 <Button        
                     HeightRequest="50"                
@@ -170,6 +170,9 @@
                     VerticalOptions="Center"
                     Text="See All"></Button>
             </StackLayout>
+
+            <StackLayout IsVisible="{Binding IsVisible}">
+            
             <Frame 
                 Margin="10,0,10,0"
                 CornerRadius="20"
@@ -248,7 +251,7 @@
                                 ></Label>
                             <Label
                                 TextColor="Gray"
-                                Text="Pasar Senen"></Label>
+                                Text="{Binding UpcomingFromStation}"></Label>
                         </VerticalStackLayout>
                         <Image
                             Grid.Row="0"
@@ -269,11 +272,15 @@
                             <Label
                                 TextColor="Gray"
                                 HorizontalOptions="EndAndExpand"
-                                Text="Surakarta"></Label>
+                                Text="{Binding UpcomingToStation}"></Label>
                         </VerticalStackLayout>
                     </Grid>
                 </StackLayout>
             </Frame>
+
+
+            </StackLayout>
+
             <Grid               
                 Padding="20"
                 ColumnSpacing="10"

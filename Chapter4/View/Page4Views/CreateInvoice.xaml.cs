@@ -34,7 +34,7 @@ public partial class CreateInvoice : ContentPage
             ProductName = _createInvoiceViewModel.ProductName,
             Quantity = _createInvoiceViewModel.Quantity,
             PurchaseDate = _createInvoiceViewModel.PurchaseDate.ToString("dd-MMM-yyyy"),
-            PurchaseTime = _createInvoiceViewModel.PurchaseTime.ToString("hh:mm tt"),
+            PurchaseTime = _createInvoiceViewModel.PurchaseTime.ToString(),
             Premium= _createInvoiceViewModel.Premium,
             IsPremium= _createInvoiceViewModel.IsPremium,
             CustomerName = _createInvoiceViewModel.CustomerName,

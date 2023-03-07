@@ -9,8 +9,9 @@ public partial class App : Application
 {
 	public App()
 	{
-		InitializeComponent();	
+		InitializeComponent();
 
-        MainPage = new NavigationPage(new Page1());
+		MainPage = new NavigationPage(new LoginScreen());	
+		//{ BarBackgroundColor = Colors.Gray }; 
     }
 }

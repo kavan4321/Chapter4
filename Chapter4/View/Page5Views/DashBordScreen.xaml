@@ -2,33 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Chapter4.View.Page5Views.DashBordScreen"
+             NavigationPage.HasNavigationBar="False"
              Title="DashBordScreen">
     <ScrollView>
     <StackLayout
         Padding="10,20,10,20">
             <Grid
                 RowDefinitions="*"
-                ColumnDefinitions="*,70">
+                ColumnDefinitions="*,Auto">
                 <Label
                     Grid.Column="0"
                     FontAttributes="Bold"
-                    FontSize="30"
+                    FontSize="25"
                     Text="Hii Jezz&#x0a;Find Your Furniture needs"></Label>
                 <Frame
-                    CornerRadius="20"
-                    Padding="20"
+                    Padding="10"
+                    CornerRadius="30"
                     Grid.Column="1"
                     VerticalOptions="Center">
                     <StackLayout
-                        WidthRequest="70">
+                        VerticalOptions="Center"
+                        WidthRequest="50">
                         <Frame
-                            CornerRadius="60"
+                            CornerRadius="50"
                             BorderColor="White"
-                            HeightRequest="60"
-                            WidthRequest="60"
-                            IsClippedToBounds="True"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center">
+                            HorizontalOptions="Center">
                             <Image
                                 WidthRequest="30"
                                 HeightRequest="30"
@@ -46,7 +44,7 @@
                 RowDefinitions="*"
                 ColumnDefinitions="*,*">
                 <Frame
-                    CornerRadius="15"
+                    CornerRadius="20"
                     Padding="5"
                     Grid.Column="0">
                     <HorizontalStackLayout>
@@ -66,7 +64,7 @@
                     </HorizontalStackLayout>
                 </Frame>
                 <Frame
-                    CornerRadius="15"
+                    CornerRadius="20"
                    Padding="5"
                     Grid.Column="1">
                     <HorizontalStackLayout>
@@ -119,7 +117,7 @@
                         <Label
                              Margin="20,10,0,0"
                              FontAttributes="Bold"
-                             FontSize="30"
+                             FontSize="26"
                              TextColor="White"
                              Text="55%✨"></Label>
                         <Label
@@ -158,6 +156,8 @@
                     FontAttributes="Bold"
                     Text="🔠"></Label>
             </Grid>
+            
+        
             <Grid
                 Margin="0,0,0,30"
                 ColumnSpacing="10"

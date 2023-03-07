@@ -14,7 +14,7 @@
             <StackLayout VerticalOptions="CenterAndExpand">
                 <Image  
                  HeightRequest="170"
-                 Source="quiz"></Image>
+                 Source="quizz"></Image>
             </StackLayout>
             <StackLayout 
                 VerticalOptions="EndAndExpand">
@@ -47,7 +47,7 @@
                         BorderColor="Blue"
                         BorderWidth="2"
                         FontFamily="Homemade Sausage"
-                        FontSize="20"
+                        FontSize="19"
                         TextColor="Blue"
                         BackgroundColor="White"
                         Text="Register">
@@ -62,7 +62,7 @@
                         BorderColor="Blue"
                         BorderWidth="2"
                         FontFamily="Homemade Sausage"
-                        FontSize="20"
+                        FontSize="19"
                         TextColor="Blue"
                         BackgroundColor="White"
                         Text="Go Back">

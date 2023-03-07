@@ -10,8 +10,7 @@
         </Invoice:CreateInvoiceViewModel>
     </ContentPage.BindingContext>
     <NavigationPage.TitleView>
-        <StackLayout  
-            BackgroundColor="Gray">
+       
         <Label 
                 Margin="0,10,0,0"
                 HorizontalOptions="Center"
@@ -20,7 +19,7 @@
                 FontSize="21"
                 FontFamily="Homemade Sausage"          
             ></Label>
-        </StackLayout>
+        
     </NavigationPage.TitleView>
     <ScrollView>
         <StackLayout 

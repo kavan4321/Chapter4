@@ -13,7 +13,7 @@
                 <StackLayout>
                     <Image
                     HeightRequest="150"
-                    Source="quiz"></Image>
+                    Source="quizz.png"></Image>
                     <Button
                         x:Name="PlayButton"
                         Clicked="PlayButton_Clicked"
@@ -23,7 +23,7 @@
                         BorderColor="LightBlue"
                         BorderWidth="2"
                         FontFamily="Homemade Sausage"
-                        FontSize="20"
+                        FontSize="19"
                         TextColor="Blue"
                         BackgroundColor="White"
                         Text="Play">

@@ -14,7 +14,7 @@
                 <Image  
                  Margin="5,20"
                  HeightRequest="170"
-                 Source="quiz"></Image>
+                 Source="quizz"></Image>
                 <Label
                     Margin="20"
                     FontSize="40"
@@ -34,7 +34,7 @@
                         BorderColor="Blue"
                         BorderWidth="2"
                         FontFamily="Homemade Sausage"
-                        FontSize="20"
+                        FontSize="19"
                         TextColor="Blue"
                         BackgroundColor="White"
                         Text="Change Player Name">
@@ -49,7 +49,7 @@
                         BorderColor="Blue"
                         BorderWidth="2"
                         FontFamily="Homemade Sausage"
-                        FontSize="20"
+                        FontSize="19"
                         TextColor="Blue"
                         BackgroundColor="White"
                         Text="Go To Welcome">

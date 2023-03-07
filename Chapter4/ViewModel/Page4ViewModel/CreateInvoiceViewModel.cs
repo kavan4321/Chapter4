@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
-using System.Windows.Input;
+using System.Windows.Input; 
 
 namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
 {
@@ -24,7 +24,7 @@ namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
         public ICommand GenerateCommand { get; private set; }
         public string ProductName { get; set; }
         public DateTime PurchaseDate { get; set; }
-        public DateTime PurchaseTime { get; set; }
+        public TimeSpan PurchaseTime { get; set; }
         public bool IsPremium { get; set; }
  
         public string Premium
@@ -106,6 +106,7 @@ namespace Chapter4.ViewModel.Page4ViewModel.CreateDetails
             }
         }
       
+
      
         public CreateInvoiceViewModel()
         {
