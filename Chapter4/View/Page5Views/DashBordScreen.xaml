@@ -65,7 +65,7 @@
                 </Frame>
                 <Frame
                     CornerRadius="20"
-                   Padding="5"
+                    Padding="5"
                     Grid.Column="1">
                     <HorizontalStackLayout>
                         <Image
@@ -91,9 +91,10 @@
                 FontAttributes="Bold"
                 Text="For You"></Label>
             <Frame 
-               Padding="0"
+               
+                Padding="0"
                 CornerRadius="30"
-                Margin="0,20,0,0">
+                Margin="10,20">
                 <Grid                    
                     RowDefinitions="*"
                     ColumnDefinitions="*,Auto">
@@ -141,7 +142,7 @@
             </Frame>
             <Grid 
                 ColumnDefinitions="*,*"
-                Margin="10,20">
+                Margin="10,10">
                 <Label
                     Grid.Column="0"
                     FontSize="18"
@@ -163,7 +164,8 @@
                 ColumnSpacing="10"
                 RowDefinitions="*"
                 ColumnDefinitions="*,*">
-                <Frame                    
+                <Frame    
+                    CornerRadius="30"
                     Grid.Column="0">
                     <StackLayout 
                         Spacing="3">
@@ -189,7 +191,8 @@
                             Text="$420"></Label>
                     </StackLayout>
                 </Frame>
-                <Frame              
+                <Frame  
+                    CornerRadius="30"
                     Grid.Column="1">
                     <StackLayout>
                         <Image 
@@ -199,7 +202,7 @@
                             FontSize="16"
                             FontAttributes="Bold"
                             HorizontalOptions="Center"
-                            Text="vualerel Chair"></Label>
+                            Text="Vualerel Chair"></Label>
                         <HorizontalStackLayout 
                             HorizontalOptions="Center">
                             <Label

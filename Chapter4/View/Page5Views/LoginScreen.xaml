@@ -15,7 +15,7 @@
             VerticalOptions="Center">
             <Label
                 Margin="0,10,0,10"
-                Text="Welcome Back"
+                Text="Welcome back"
                 FontSize="30"
                 FontAttributes="Bold"
             ></Label>
@@ -67,7 +67,7 @@
                     <Image
                         HorizontalOptions="Center"
                         Source="google"
-                        HeightRequest="35"></Image>
+                        HeightRequest="30"></Image>
                     <Label
                         Margin="5"
                         VerticalOptions="Center"

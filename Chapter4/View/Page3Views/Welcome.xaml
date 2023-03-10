@@ -9,6 +9,7 @@
         <StackLayout            
             VerticalOptions="Center">
             <Frame
+                CornerRadius="20"
                 Margin="10">
                 <StackLayout>
                     <Image
@@ -19,7 +20,7 @@
                         Clicked="PlayButton_Clicked"
                         Margin="0,30,0,0"
                         HeightRequest="50"
-                        CornerRadius="20"
+                        CornerRadius="30"
                         BorderColor="LightBlue"
                         BorderWidth="2"
                         FontFamily="Homemade Sausage"
